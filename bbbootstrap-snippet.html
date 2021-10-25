@@ -1,0 +1,910 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Snippet - BBBootstrap</title>
+ 
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    
+    <style>
+        body {
+            background-color: #eee
+        }
+
+        .header-main {
+            position: relative;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            background-color: #007bff
+        }
+
+        .logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 600
+        }
+
+        .brand-wrap {
+            text-decoration: none !important
+        }
+
+        .icon-sm {
+            width: 48px;
+            height: 48px;
+            line-height: 48px !important;
+            font-size: 20px
+        }
+
+        .widget-header {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative
+        }
+
+        .widget-header .notify {
+            position: absolute;
+            top: -3px;
+            right: -10px
+        }
+
+        .notify {
+            position: absolute;
+            top: -4px;
+            right: -10px;
+            display: inline-block;
+            padding: .25em .6em;
+            font-size: 12px;
+            line-height: 1;
+            text-align: center;
+            border-radius: 3rem;
+            color: #fff;
+            background-color: #fa3434
+        }
+
+        .mr-3,
+        .mx-3 {
+            margin-right: 1rem !important
+        }
+
+        .search-form {
+            border: 1px solid #ffffff !important
+        }
+
+        .search-button {
+            color: #007bff;
+            background-color: #ffffff;
+            border-color: #ffffff
+        }
+
+        .navbar-main {
+            background-color: #fff
+        }
+
+        .navbar-toggler {
+            color: rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0, 0.5);
+            border-color: rgba(0, 0, 0, 0.1) !important
+        }
+
+        .navbar-toggler {
+            padding: 4px;
+            font-size: 1.25rem;
+            line-height: 1;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: 0.37rem
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            float: left;
+            min-width: 10rem;
+            padding: .5rem 0;
+            margin: .5rem 7px 0px;
+            font-size: 1rem;
+            color: #212529;
+            text-align: left;
+            list-style: none;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid rgba(0, 0, 0, .15);
+            border-radius: .25rem
+        }
+
+        .dropdown-item {
+            display: block;
+            width: 100%;
+            padding: .45rem 1.5rem;
+            clear: both;
+            font-weight: 400;
+            color: #212529;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0
+        }
+
+        .navbar-toggler-icon {
+            background-image: url(https://img.icons8.com/ios/50/000000/menu.png)
+        }
+
+        .nav-link {
+            text-transform: uppercase;
+            font-weight: 400
+        }
+
+        .vl {
+            border-left: 1px solid #fff;
+            height: 100%
+        }
+
+        .fas {
+            color: #fff
+        }
+
+        .login {
+            color: white
+        }
+
+           /*jssor slider loading skin double-tail-spin css*/
+           .jssorl-004-double-tail-spin img {
+            animation-name: jssorl-004-double-tail-spin;
+            animation-duration: 1.6s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+
+        @keyframes jssorl-004-double-tail-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /*jssor slider bullet skin 031 css*/
+        .jssorb031 {position:absolute;}
+        .jssorb031 .i {position:absolute;cursor:pointer;}
+        .jssorb031 .i .b {fill:#000;fill-opacity:0.6;stroke:#fff;stroke-width:1600;stroke-miterlimit:10;stroke-opacity:0.8;}
+        .jssorb031 .i:hover .b {fill:#fff;fill-opacity:1;stroke:#000;stroke-opacity:1;}
+        .jssorb031 .iav .b {fill:#fff;stroke:#000;stroke-width:1600;fill-opacity:.6;}
+        .jssorb031 .i.idn {opacity:.3;}
+
+        /*jssor slider arrow skin 051 css*/
+        .jssora051 {display:block;position:absolute;cursor:pointer;}
+        .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+        .jssora051:hover {opacity:.8;}
+        .jssora051.jssora051dn {opacity:.5;}
+        .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+
+
+        /*card details starts*/
+
+        @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+
+/*body {
+    background: #fff;
+    font-family: 'Josefin Sans', sans-serif
+}*/
+
+.box h3 {
+    font-family: 'Josefin Sans', sans-serif
+}
+
+.box {
+    padding: 60px 0px
+}
+
+.box-part {
+    background: #F0FFFF;
+    padding: 60px 10px;
+    margin: 30px 0px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px
+}
+
+.box-part:hover {
+    background: #000000
+}
+
+.box-part:hover .fa,
+.box-part:hover .title,
+.box-part:hover .text,
+.box-part:hover a {
+    color: #FFF;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out
+}
+
+.text {
+    margin: 20px 0px
+}
+
+.fa {
+    color: #00BFFF
+}
+        /*card details ends*/
+
+        /*category starts*/
+ /* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 25%;
+  height: 200px;
+ margin-right: 5px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+.carousel-cell.is-selected {
+  background: #ED2;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+
+        /*category ends*/
+
+
+        /*----ratting starts-----*/
+
+        .rating-group {
+    display: inline-flex;
+  }
+  
+  /* make hover effect work properly in IE */
+  .rating__icon {
+    pointer-events: none;
+  }
+  
+  /* hide radio inputs */
+  .rating__input {
+   position: absolute !important;
+   left: -9999px !important;
+  }
+
+  /* set icon padding and size */
+  .rating__label {
+    cursor: pointer;
+    padding: 0 0.1em;
+    font-size: 2rem;
+  }
+  
+  /* set default star color */
+  .rating__icon--star {
+    color: orange;
+  }
+  
+  /* set color of none icon when unchecked */
+  .rating__icon--none {
+    color: #eee;
+  }
+
+  /* if none icon is checked, make it red */
+  .rating__input--none:checked + .rating__label .rating__icon--none {
+    color: red;
+  }
+
+  /* if any input is checked, make its following siblings grey */
+  .rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+
+  /* make all stars orange on rating group hover */
+  .rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+  }
+
+  /* make hovered input's following siblings grey on hover */
+  .rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+  }
+  
+  /* make none icon grey on rating group hover */
+  .rating-group:hover .rating__input--none:not(:hover) + .rating__label .rating__icon--none {
+     color: #eee;
+  }
+
+
+        /*--------ratting ends---------*/
+    </style>
+</head>
+
+<body oncontextmenu='return false' class='snippet-body'>
+
+<!--image banner silider start-->
+      
+    <!-- #region Jssor Slider Begin -->
+    <!-- Generator: Jssor Slider Composer -->
+    <!-- Source: https://www.jssor.com/demos/image-slider.slider/=edit -->
+    <script src="js/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        window.jssor_1_slider_init = function() {
+
+            var jssor_1_SlideoTransitions = [
+              [{b:500,d:1000,x:0,e:{x:6}}],
+              [{b:-1,d:1,x:100,p:{x:{d:1,dO:9}}},{b:0,d:2000,x:0,e:{x:6},p:{x:{dl:0.1}}}],
+              [{b:-1,d:1,x:200,p:{x:{d:1,dO:9}}},{b:0,d:2000,x:0,e:{x:6},p:{x:{dl:0.1}}}],
+              [{b:-1,d:1,rX:20,rY:90},{b:0,d:4000,rX:0,e:{rX:1}}],
+              [{b:-1,d:1,rY:-20},{b:0,d:4000,rY:-90,e:{rY:7}}],
+              [{b:-1,d:1,sX:2,sY:2},{b:1000,d:3000,sX:1,sY:1,e:{sX:1,sY:1}}],
+              [{b:-1,d:1,sX:2,sY:2},{b:1000,d:5000,sX:1,sY:1,e:{sX:3,sY:3}}],
+              [{b:-1,d:1,tZ:300},{b:0,d:2000,o:1},{b:3500,d:3500,tZ:0,e:{tZ:1}}],
+              [{b:-1,d:1,x:20,p:{x:{o:33,r:0.5}}},{b:0,d:1000,x:0,o:0.5,e:{x:3,o:1},p:{x:{dl:0.05,o:33},o:{dl:0.02,o:68,rd:2}}},{b:1000,d:1000,o:1,e:{o:1},p:{o:{dl:0.05,o:68,rd:2}}}],
+              [{b:-1,d:1,da:[0,700]},{b:0,d:600,da:[700,700],e:{da:1}}],
+              [{b:600,d:1000,o:0.4}],
+              [{b:-1,d:1,da:[0,400]},{b:200,d:600,da:[400,400],e:{da:1}}],
+              [{b:800,d:1000,o:0.4}],
+              [{b:-1,d:1,sX:1.1,sY:1.1},{b:0,d:1600,o:1},{b:1600,d:5000,sX:0.9,sY:0.9,e:{sX:1,sY:1}}],
+              [{b:0,d:1000,o:1,p:{o:{o:4}}}],
+              [{b:1000,d:1000,o:1,p:{o:{o:4}}}]
+            ];
+
+            var jssor_1_options = {
+              $AutoPlay: 1,
+              $CaptionSliderOptions: {
+                $Class: $JssorCaptionSlideo$,
+                $Transitions: jssor_1_SlideoTransitions
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$,
+                $SpacingX: 16,
+                $SpacingY: 16
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*#region responsive code begin*/
+
+            var MAX_WIDTH = 980;
+
+            function ScaleSlider() {
+                var containerElement = jssor_1_slider.$Elmt.parentNode;
+                var containerWidth = containerElement.clientWidth;
+
+                if (containerWidth) {
+
+                    var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                    jssor_1_slider.$ScaleWidth(expectedWidth);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*#endregion responsive code end*/
+        };
+
+       
+            
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin-ext,cyrillic-ext,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,regular,italic,700,700italic&subset=latin-ext,greek-ext,cyrillic-ext,greek,vietnamese,latin,cyrillic" rel="stylesheet" type="text/css" />
+    
+    <!--image banner slider ends-->
+
+    <header class="section-header">
+        <section class="header-main border-bottom">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-sm-4 col-md-4 col-5"> <a href="#" class="brand-wrap" data-abc="true">
+                            <!--<img class="logo" src="images/logo-removebg-preview.png">--><span class="logo"><img
+                                    src="images/logo-removebg-preview.png" height="35px" ></span>
+                        </a> </div>
+                    <div class="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
+                        <form action="#" class="search-wrap">
+                            <div class="input-group w-100"> <input type="text" class="form-control search-form"
+                                    style="width: 18%;margin-left: -81px;" placeholder="Search">
+                                <div class="input-group-append"> <button class="btn btn-primary search-button"
+                                        type="submit"> <i class="fa fa-search"></i> </button>
+
+                                    <div class="container d-flex justify-content-center align-items-center">
+                                        <div class="dropdown"> <button class="btn btn-outline-danger dropdown-toggle"
+                                                type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                aria-expanded="false"> <span>Location</span> <i
+                                                    class="fa fa-caret-down"></i> </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="#">Sivakasi</a></li>
+                                                <li><a class="dropdown-item" href="#">Srivilliputhur</a></li>
+                                                <li><a class="dropdown-item" href="#">Viruthu Nagar</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
+                        <div class="d-flex justify-content-end"> <a target="_blank" href="#" data-abc="true"
+                                class="nav-link widget-header"> <i class="fas fa-cart-plus"></i></a> <span
+                                class="vl"></span>
+                            <div class="dropdown btn-group"> <a class="nav-link nav-icons" href="#"
+                                    id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false" data-abc="true"><i class="fas fa fa-bell"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                    <li>
+                                        <div class="notification-title">More Info</div>
+                                        <div class="notification-list">
+                                            <div class="list-group"> <a href="affiliates"
+                                                    class="list-group-item list-group-item-action active"
+                                                    data-abc="true">
+                                                    <div class="notification-info">
+                                                        <div class="notification-list-user-img"><img
+                                                                src="https://img.icons8.com/nolan/100/000000/helping-hand.png"
+                                                                alt="" class="user-avatar-md rounded-circle"></div>
+                                                        <div class="notification-list-user-block"><span
+                                                                class="notification-list-user-name">Affiliate
+                                                                program</span> </div>
+                                                    </div>
+                                                </a> <a href="redemption-center"
+                                                    class="list-group-item list-group-item-action active"
+                                                    data-abc="true">
+                                                    <div class="notification-info">
+                                                        <div class="notification-list-user-img"><img
+                                                                src="https://img.icons8.com/bubbles/100/000000/prize.png"
+                                                                alt="" class="user-avatar-md rounded-circle"></div>
+                                                        <div class="notification-list-user-block"><span
+                                                                class="notification-list-user-name">Redemption
+                                                                Center</span> </div>
+                                                    </div>
+                                                </a> <a href="#" class="list-group-item list-group-item-action active"
+                                                    data-abc="true">
+                                                    <div class="notification-info">
+                                                        <div class="notification-list-user-img"><img
+                                                                src="https://img.icons8.com/ultraviolet/100/000000/medal.png"
+                                                                alt="" class="user-avatar-md rounded-circle"></div>
+                                                        <div class="notification-list-user-block"><span
+                                                                class="notification-list-user-name">Achievements</span>
+                                                        </div>
+                                                    </div>
+                                                </a> <a href="#" class="list-group-item list-group-item-action active"
+                                                    data-abc="true">
+                                                    <div class="notification-info">
+                                                        <div class="notification-list-user-img"><img
+                                                                src="https://img.icons8.com/bubbles/100/000000/call-female.png"
+                                                                alt="" class="user-avatar-md rounded-circle"></div>
+                                                        <div class="notification-list-user-block"><span
+                                                                class="notification-list-user-name">Contact us</span>
+                                                        </div>
+                                                    </div>
+                                                </a> </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> <span class="vl"></span> <a class="nav-link nav-user-img" href="#"
+                                data-toggle="modal" data-target="#login-modal" data-abc="true"><span
+                                    class="login">LOGIN</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+        <nav class="navbar navbar-expand-md navbar-main border-bottom">
+            <div class="container-fluid">
+                <form class="d-md-none my-2">
+                    <div class="input-group"> <input type="search" name="search" class="form-control"
+                            placeholder="Search" required="">
+                        <div class="input-group-append"> <button type="submit" class="btn btn-secondary"> <i
+                                    class="fa fa-search"></i> </button>
+                                
+                                    <div class="container d-flex justify-content-center align-items-center">
+                                        <div class="dropdown"> <button class="btn btn-outline-danger dropdown-toggle"
+                                                type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                                aria-expanded="false"> <span>Locations</span> <i
+                                                    class="fa fa-caret-down"></i> </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <li><a class="dropdown-item" href="#">Sivagasi</a></li>
+                                                <li><a class="dropdown-item" href="#">Srivilliputhur</a></li>
+                                                <li><a class="dropdown-item" href="#">Viruhtu Nagar</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                    </div>
+                </form>
+            </div>
+
+            <!--<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6" aria-expanded="false"> <span class="navbar-toggler-icon"></span> </button>
+           <div class="navbar-collapse collapse" id="dropdown6" style="">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" data-abc="true" aria-expanded="false">Laptops</a>
+                        <div class="dropdown-menu"> <a class="dropdown-item" href="" data-abc="true">Lenovo</a> <a class="dropdown-item" href="" data-abc="true">Dell</a> <a class="dropdown-item" href="" data-abc="true">HP</a> <a class="dropdown-item" href="" data-abc="true">Apple</a> </div>
+                    </li>
+                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">Refurbished Mobile</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">Accessories & Peripheral</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">Blog</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">Support</a> </li>
+                </ul>
+            </div>-->
+            </div>
+        </nav>
+    </header>
+
+
+    <!--banner slider starts-->
+
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+            <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
+        </div>
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+            <div style="background-color:#000000;">
+                <img data-u="image" style="opacity:0.5;" src="images/banner1.jpg" />
+                <div data-ts="flat" data-p="320" style="left:144px;top:80px;width:550px;height:90px;position:absolute;overflow:hidden;">
+                    <div data-to="50% 50%" data-ts="preserve-3d" data-t="0" style="left:550px;top:0px;width:550px;height:90px;position:absolute;overflow:hidden;">
+                        <!--<div data-to="50% 50%" data-ts="preserve-3d" data-arr="1" style="left:20px;top:18px;width:200px;height:20px;position:absolute;color:#edf1f2;font-size:16px;font-weight:700;line-height:1.2;letter-spacing:0.1em;">Fresh & Healthy</div>-->
+                        <div data-to="50% 50%" data-ts="preserve-3d" data-arr="2" style="left:19px;top:36px;width:600px;height:30px;position:absolute;color:#edf1f2;font-size:24px;line-height:1.2;letter-spacing:0.05em;"><span style="font-weight:900;color:#e04338;">Products</span></div>
+                        <div data-to="50% 50%" data-ts="preserve-3d" data-arr="1" style="left:20px;top:18px;width:200px;height:20px;position:absolute;color:#edf1f2;font-size:16px;font-weight:700;line-height:1.2;letter-spacing:0.1em;"><span style="font-weight:900;color:#e04338;">Fresh & Healthy</span></div>
+                    </div>
+                </div>
+            </div>
+            <!--<div>
+                <img data-u="image" src="img/px-beach-daylight-fun-1430675-image.jpg" />
+                <div data-ts="flat" data-p="2720" data-po="50% 48%" style="left:0px;top:0px;width:980px;height:380px;position:absolute;">
+                    <div data-to="50% 50%" data-ts="preserve-3d" data-t="3" style="left:400px;top:-30px;width:500px;height:400px;position:absolute;">
+                        <div data-to="50% 50%" data-ts="preserve-3d" data-t="4" style="left:0px;top:0px;width:500px;height:400px;position:absolute;">
+                            <div data-to="50% 50%" data-ts="preserve-3d" data-t="5" style="left:0px;top:0px;width:500px;height:400px;position:absolute;">
+                                <div data-to="50% 50%" data-ts="preserve-3d" data-t="6" style="left:0px;top:0px;width:500px;height:400px;position:absolute;">
+                                    <div data-to="50% 50%" data-t="7" style="left:-50px;top:175px;width:600px;height:38px;position:absolute;opacity:0;color:#00a186;font-size:32px;font-weight:700;line-height:1.2;text-align:center;">Create your kind of holiday</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <!--<div>
+                <img data-u="image" src="img/px-fun-man-person-2361598-image.jpg" />
+                <div data-ts="flat" data-p="2720" data-po="50% 48%" style="left:0px;top:0px;width:980px;height:380px;position:absolute;">
+                    <div data-to="50% 50%" data-ts="preserve-3d" data-arr="8" style="left:-2px;top:20px;width:1000px;height:20px;position:absolute;opacity:0;color:#0ff2f2;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:1.2;letter-spacing:1.3em;text-align:center;">CHAMPIONS ARE MADE WHEN NO ONE IS WATCHING</div>
+                </div>
+            </div>-->
+            <div style="background-color:#000000;">
+                <img data-u="image" style="opacity:0.5;" src="images/banner2.jpg" />
+                <div data-ts="flat" data-p="1800" data-po="50% -100%" style="left:120px;top:90px;width:600px;height:300px;position:absolute;">
+                    <svg viewbox="0 0 200 200" width="200" height="200" data-t="10" style="left:66px;top:21px;display:block;position:absolute;opacity:0.6;overflow:visible;">
+                        <path stroke-dasharray="0,700" fill="none" stroke="#ffffff" d="M0,100C0,44.77152 44.77152,0 100,0C155.22848,0 200,44.77152 200,100C200,155.22848 155.22848,200 100,200C44.77152,200 0,155.22848 0,100Z" data-t="9"></path>
+                    </svg>
+                    <svg viewbox="0 0 80 80" width="80" height="80" data-t="12" style="left:3px;top:124px;display:block;position:absolute;opacity:0.6;overflow:visible;">
+                        <path stroke-dasharray="0,400" fill="none" stroke="#ffffff" shape-rendering="crispEdges" d="M80,80L0,80L0,0L80,0Z" data-t="11"></path>
+                    </svg>
+                    <svg viewbox="0 0 500 200" data-to="50% 50%" width="500" height="200" data-t="13" style="left:50px;top:50px;display:block;position:absolute;opacity:0;overflow:visible;">
+                        <g>
+                            <text fill="#ffffff" x="17" y="110" style="position:absolute;font-family:Montserrat,sans-serif;font-size:32px;font-weight:300;overflow:visible;">From Our
+                            </text>
+                            <text fill="#ffffff" x="188" y="110" style="position:absolute;font-family:Montserrat,sans-serif;font-size:32px;font-weight:500;letter-spacing:0.1em;overflow:visible;">Farmers
+                            </text>
+                            <text fill="#ff3700" x="218" y="130" style="position:absolute;font-family:Montserrat,sans-serif;font-size:16px;font-weight:900;letter-spacing:0.1em;overflow:visible;">Buy Groceries
+                            </text>
+                            <text fill="#ff3700" x="333" y="130" style="position:absolute;opacity:0.8;font-family:Montserrat,sans-serif;font-size:16px;font-weight:700;letter-spacing:0.1em;overflow:visible;">
+                            </text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div>
+                <img data-u="image" src="images/banner3.jpg" />
+                <div data-ts="flat" data-p="500" style="left:160px;top:-30px;width:800px;height:200px;position:absolute;">
+                    <div data-arr="14" style="left:0px;top:36px;width:800px;height:70px;position:absolute;opacity:0;color:#199494;font-family:'Roboto Condensed',sans-serif;font-size:32px;font-weight:400;line-height:1.2;letter-spacing:-0.05em;text-align:center;text-shadow:2px 1px #d9d99a;">Stay&nbsp;&nbsp;<span style="font-size:2em;">Home</span>&nbsp; We&nbsp; Deliver&nbsp;&nbsp;<span style="font-size:1.6em;"></span></div>
+                    <div data-arr="15" style="left:0px;top:106px;width:800px;height:48px;position:absolute;opacity:0;color:#0d4d4d;font-family:'Roboto Condensed',sans-serif;font-size:20px;font-weight:400;line-height:1.2;letter-spacing:0.2em;text-align:center;text-shadow:1px 1px #d9d99a;">Your <span style="font-size:2em;">Home</span></div>
+                </div>
+            </div>
+        </div><a data-scale="0" href="https://www.jssor.com" style="display:none;position:absolute;">slider html</a>
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+            <div data-u="prototype" class="i" style="width:13px;height:13px;">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                </svg>
+            </div>
+        </div>
+        <!-- Arrow Navigator -->
+        <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+            </svg>
+        </div>
+        <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+            </svg>
+        </div>
+    </div><br><br>
+
+
+    <!--catergory starts-->
+    <!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "wrapAround": true}'>
+    <img class="carousel-cell" src="images/ct10-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct2-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct3-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct4.jpg" style="background: none;">
+    <img class="carousel-cell" src="images/ct5-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct6-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct7-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct8-removebg-preview.png" style="background: none;">
+    <img class="carousel-cell" src="images/ct9-removebg-preview.png" style="background: none;"ca>
+    <!--<div class="carousel-cell"></div>
+    <div class="carousel-cell"></div>-->
+  </div>
+  
+  
+      <!--category ends-->
+
+
+    <!--card details starts-->
+    
+    <div class="box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">Vinayaka Grocey</h3>
+                        <div class="title">
+                            <address>23 Street,Ventakeshwara Nagar,Sivakasi</address>
+                        </div>
+                        <div class="text"> <span>Open Now:10:00am-10:00</span>
+                        
+                         <!--star ratting-->
+                        
+                         <div id="full-stars-example">
+                            <div class="rating-group">
+                                <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                            </div>
+                          <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                        </div>
+                        
+                        </div> <!--<a href="#">Learn More</a>-->
+                        <button>Shop Now</button>
+                    </div>
+                    
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">Gokul Raj Grocery</h3>
+                        <div class="title">
+                            <address>2/3,raman Nagar,Trichy Road,ViruthuNagar</address>
+                        </div>
+                        <div class="text"> <span>open Now:9:30am-10:am</span>
+                        
+                         <!--star ratting-->
+                        
+                         <div id="full-stars-example">
+                            <div class="rating-group">
+                                <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                            </div>
+                          <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                        </div>        
+
+                        </div>
+
+                        <button>Shop Now</button>
+                        
+                        <!--<a href="#">Learn More</a>-->
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">Dhana Stores</h3>
+                        <div class="title">
+                            <address>21,pilayar Nagar,madurai Road,Srivilliputhur</address>
+                        </div>
+                        <div class="text"> <span>open Now:9:30am-10:am</span>
+                        
+                     
+                            <!--star ratting-->
+                        
+                            <div id="full-stars-example">
+                                <div class="rating-group">
+                                    <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                    <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                    <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                    <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                    <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                    <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                    <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                    <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                    <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                    <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                    <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                    <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                                </div>
+                              <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                            </div>
+                            
+                        
+                        </div><!--<a href="#">Learn More</a>-->
+                     
+                        <button>Shop Now</button>
+                    </div>
+                </div>
+              
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">Balaji Grocey Stores</h3>
+                        <div class="title">
+                            <address>21 street,Vaisagi Nagar,ViruthuNagar</address>
+                        </div>
+                        <div class="text"> <span>Open Now:10:00am-10:00</span>
+                        
+                         <!--star ratting-->
+                        
+                         <div id="full-stars-example">
+                            <div class="rating-group">
+                                <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                            </div>
+                          <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                        </div>
+                        
+                        </div> <!--<a href="#">Learn More</a>-->
+                        <button>Shop Now</button>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">Jagan Stores</h3>
+                        <div class="title">
+                            <address>5th street,pilayar Nagar,Srivilliputhur</address>
+                        </div>
+                        <div class="text"> <span>Open Now:10:00am-10:00</span>
+                        
+                         <!--star ratting-->
+                        
+                         <div id="full-stars-example">
+                            <div class="rating-group">
+                                <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                            </div>
+                          <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                        </div>
+                        
+                        </div> <!--<a href="#">Learn More</a>-->
+                        <button>Shop Now</button>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="box-part text-center"><h3 class="title">The Mohamad Stores</h3>
+                        <div class="title">
+                            <address>2nd cross cutroad,Ganesan Nagar,Sivakasi</address>
+                        </div>
+                        <div class="text"> <span>Open Now:10:00am-10:00</span>
+                        
+                         <!--star ratting-->
+                        
+                         <div id="full-stars-example">
+                            <div class="rating-group">
+                                <input class="rating__input rating__input--none" name="rating" id="rating-none" value="0" type="radio">
+                                <label aria-label="No rating" class="rating__label" for="rating-none"><i class="rating__icon rating__icon--none fa fa-ban"></i></label>
+                                <label aria-label="1 star" class="rating__label" for="rating-1"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-1" value="1" type="radio">
+                                <label aria-label="2 stars" class="rating__label" for="rating-2"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-2" value="2" type="radio">
+                                <label aria-label="3 stars" class="rating__label" for="rating-3"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-3" value="3" type="radio" checked>
+                                <label aria-label="4 stars" class="rating__label" for="rating-4"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-4" value="4" type="radio">
+                                <label aria-label="5 stars" class="rating__label" for="rating-5"><i class="rating__icon rating__icon--star fa fa-star"></i></label>
+                                <input class="rating__input" name="rating" id="rating-5" value="5" type="radio">
+                            </div>
+                          <p class="desc" style="margin-bottom: 2rem; font-family: sans-serif; font-size:0.9rem"> </p>
+                        </div>
+                        
+                        </div> <!--<a href="#">Learn More</a>-->
+                        <button>Shop Now</button>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--card detail ends-->
+
+    <!--category starts-->
+
+    
+
+    <script type="text/javascript">jssor_1_slider_init();
+    </script>
+    <!-- #endregion Jssor Slider End -->
+
+    <script type='text/javascript'
+        src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript'></script>
+</body>
+
+</html>
